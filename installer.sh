@@ -100,8 +100,8 @@ if [ "$MODE_CHOICE" = "1" ]; then
     sed -i "s/UUID = os.environ.get('UUID', '[^']*')/UUID = os.environ.get('UUID', '$UUID_INPUT')/" app.py
     echo -e "${GREEN}UUID 已設置爲: $UUID_INPUT${NC}"
     
-    sed -i "s/CFIP = os.environ.get('CFIP', '[^']*')/CFIP = os.environ.get('CFIP', 'cloudflare.com')/" app.py
-    echo -e "${GREEN}優選IP已自動設置爲: cloudflare.com${NC}"
+    sed -i "s/CFIP = os.environ.get('CFIP', '[^']*')/CFIP = os.environ.get('CFIP', 'joeyblog.net')/" app.py
+    echo -e "${GREEN}優選IP已自動設置爲: joeyblog.net${NC}"
     
     echo
     echo -e "${GREEN}極速配置完成！正在啓動服務...${NC}"
@@ -135,9 +135,9 @@ else
     fi
 
     echo -e "${YELLOW}當前優選IP: $(grep "CFIP = " app.py | cut -d"'" -f4)${NC}"
-    read -p "請輸入優選IP/域名 (留空使用默認 cloudflare.com): " CFIP_INPUT
+    read -p "請輸入優選IP/域名 (留空使用默認 joeyblog.net): " CFIP_INPUT
     if [ -z "$CFIP_INPUT" ]; then
-        CFIP_INPUT="cloudflare.com"
+        CFIP_INPUT="joeyblog.net"
     fi
     sed -i "s/CFIP = os.environ.get('CFIP', '[^']*')/CFIP = os.environ.get('CFIP', '$CFIP_INPUT')/" app.py
     echo -e "${GREEN}優選IP已設置爲: $CFIP_INPUT${NC}"
