@@ -26,5 +26,7 @@ bash <(curl -l -s https://raw.githubusercontent.com/TharinWONG/Python-Xray-Argo-
 
 ---
 
+兩個 `sh` 都是轉載而來。原版是簡體中文而已
+
 
 
